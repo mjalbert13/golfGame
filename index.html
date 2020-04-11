@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf game || Fantasy golf for walking a course</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <h3>GS</h3>
+    </nav>
+    <div class="container">
+        <h1 class="title">Golf Simulation</h1>
+        <div class="input">
+            <form>
+                <div class="form-group">
+                    <label for="clubs">Clubs</label>
+                    <select name="clubs" id="club-select">
+                        <option value="">Choose a club</option>
+                        <option value="driver">Driver</option>
+                        <option value="3hybrid">18* Hybrid</option>
+                        <option value="4hybrid">21* Hybrid</option>
+                        <option value="4irond">4 Iron</option>
+                        <option value="5iron">5 Iron</option>
+                        <option value="6iron">6 Iron</option>
+                        <option value="7iron">7 Iron</option>
+                        <option value="8iron">8 Iron</option>
+                        <option value="9iron">9 Iron</option>
+                        <option value="pw">Pitching Wedge</option>
+                        <option value="sw">Sand Wedge</option>
+                    </select>
+                </div>
+                <button>Hit!</button>
+            </form>
+        </div>
+        <div class="output">
+            <h2 id="yards"></h2>
+            <p id="side"></p>
+        </div>
+    </div>
+</body>
+</html>
