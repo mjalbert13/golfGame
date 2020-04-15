@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf game || Fantasy golf for walking a course</title>
-    
-    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="stylesheet" href="public/main.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
-    
 </head>
 <body>
     <nav class="nav-bar">
@@ -32,6 +30,7 @@
                         <option value="9iron">9 Iron</option>
                         <option value="pw">Pitching Wedge</option>
                         <option value="sw">Sand Wedge</option>
+                        <option value="chip">Chip Shot</option>
                     </select>
                 </div>
                 <button type="submit" id="hit">Hit!</button>
@@ -42,82 +41,6 @@
             <p id="side"></p>
         </div>
     </div>
-    
-    <script>
-        golfHit = (club) =>{
-            console.log("Funtion club = "+club)
-            let direction = ["Left","Right", "Center","Left"];
-            let distance = 0;
-
-            if(club === "driver"){
-                distance = Math.floor(Math.random()* (250-190 +1)) + 190;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1)+1)])
-            }
-
-            if(club === "3hybrid"){
-                distance = Math.floor(Math.random()* (210-190 +1)) + 190;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "4hybrid"){
-                distance = Math.floor(Math.random()* (195-180 +1)) + 180;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "4iron"){
-                distance = Math.floor(Math.random()* (180-120 +1)) + 120;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "5iron"){
-                distance = Math.floor(Math.random()* (175-110 +1)) + 110;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "6iron"){
-                distance = Math.floor(Math.random()* (160-100 +1)) + 100;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "7iron"){
-                distance = Math.floor(Math.random()* (150-90 +1)) + 90;
-                $("#side").text(direction[Math.floor(Math.random()*(3- +1))])
-            }
-
-            if(club === "8iron"){
-                distance = Math.floor(Math.random()* (130-60 +1)) + 60;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "9iron"){
-                distance = Math.floor(Math.random()* (110-40 +1)) + 40;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "pw"){
-                distance = Math.floor(Math.random()* (100-20 +1)) + 20;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-            if(club === "sw"){
-                distance = Math.floor(Math.random()* (50-10 +1)) + 10;
-                $("#side").text(direction[Math.floor(Math.random()*(3-0 +1))])
-            }
-
-
-            console.log(distance)
-            $('#yards').text(distance)
-            
-        }
-
-        $("#hit").on('click', function(e){
-            e.preventDefault();
-            $("#yards").text('');
-            $("#side").text('')
-            var club = $('#clubs').val();
-            console.log("jQuery Club= " +club)
-            golfHit(club);
-        })
-    </script>
+    <script src="/public/logic.js"></script>
 </body>
 </html>

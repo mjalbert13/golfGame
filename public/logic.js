@@ -50,11 +50,12 @@ golfHit = (club) =>{
         distance = Math.floor(Math.random()* (50-10 +1)) + 10;
     }
 
+    if(club === "chip"){
+        distance = Math.floor(Math.random()* (30-3 +1)) + 3;
+    }
 
     console.log(distance)
     $('#yards').text(distance)
-
-
 }
 
 $("#hit").on('click', function(e){
