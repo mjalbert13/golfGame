@@ -31,14 +31,17 @@
                         <option value="pw">Pitching Wedge</option>
                         <option value="sw">Sand Wedge</option>
                         <option value="chip">Chip Shot</option>
+                        <option value="put">Auto Put</option>
                     </select>
                 </div>
                 <button type="submit" id="hit">Hit!</button>
+                <button id="muligan">Muligan</button>
             </form>
         </div>
         <div class="output">
-            <h2 id="yards"></h2>
-            <p id="side"></p>
+            <h2><span id="yards"></span> Yards</h2>
+            <p>Direction  <span id="side"></span></p>
+            <p id="score"></p>
         </div>
     </div>
     <script src="/public/logic.js"></script>

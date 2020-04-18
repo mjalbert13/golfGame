@@ -1,10 +1,11 @@
 // golf game logic
-
+var stroke = 0;
 
 golfHit = (club) =>{
 
     let direction = ["Left","Right", "Center"];
     let distance = 0;
+    
 
     if(club === "driver"){
         distance = Math.floor(Math.random()* (250-190 +1)) + 190;
@@ -54,12 +55,28 @@ golfHit = (club) =>{
         distance = Math.floor(Math.random()* (30-3 +1)) + 3;
     }
 
-    console.log(distance)
+    if(club === "put"){
+        stroke++
+    }
+    
+    let r = Math.round(Math.random()*2);
+
     $('#yards').text(distance)
+    $("#side").text(direction[r])
+
 }
+
 
 $("#hit").on('click', function(e){
     e.preventDefault();
     var club = $('#clubs').val();
     golfHit(club);
+    stroke++;
+    $("#score").text(stroke)
+})
+
+$("#muligan").on('click', function(e){
+    e.preventDefault();
+    stroke--;
+    $("#score").text(stroke);
 })
